@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hangman</title>
+		<link rel = "stylesheet" type = "text/css" href = "assets/css/reset.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<script type="text/javascript" src = "assets/javascript/game.js"></script>
+	</head>
+
+	<body onload="startFunction()">
+		<!-- <audio id="myAudio" src="assets/sound/Pilot.mp3" type="audio/mpeg"></audio> -->
+		<div class = "container">
+			<!-- <div class = "hangman"> -->
+			    <div class="title">
+				<h1>HANGMAN SPACE ODYSSEY</h1>
+				</div>
+				<div class="wordContainer">
+					<!-- <h1 class = "chosenWord">Your Word Is:</h1> -->
+					<h1 id="blanks"></h1>
+				</div>
+				<br>
+				<!-- <h2 id = numLives></h2> -->
+				<!-- <h2 id = "wins"></h2> -->
+				<!-- <h2 class="h2"></h2> -->
+				<div class="winsContainer">
+				<span class="span1">Wins: </span> <span class="span2" id = "wins">0</span>
+				</div>
+				<div id="kepler">
+					<img class="kepImg" src="assets/images/kepler.jpg">
+					<p>"Kepler is a space observatory launched by NASA to discover Earth-size planets orbiting other stars. Named after astronomer Johannes Kepler, the spacecraft was launched on March 7, 2009, into an Earth-trailing heliocentric orbit.</p>
+
+                    <p>Designed to survey a portion of our region of the Milky Way to discover Earth-size exoplanets in or near habitable zones and estimate how many of the billions of stars in the Milky Way have such planets, Kepler's sole science instrument is a photometer that continually monitors the brightness of over 145,000 main sequence stars in a fixed field of view. This data is transmitted to Earth, then analyzed to detect periodic dimming caused by exoplanets that cross in front of their host star."</p>
+                    <br>
+                    <h3>Source</h3>
+                    <br>
+                    <a href="https://en.wikipedia.org/wiki/Kepler_(spacecraft)" target="_blank">Wikipedia</a>
+				</div>
+				<div id="nebula">
+					<img class="nebulaImg" src="assets/images/nebula.jpg">
+					<p>Nebulas can span many light years in length. A light year is how far light can travel in one year and one light year is about 5.9 trillion miles or 9 trillion kilometers.</p>
+
+
+					<p>"A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases. Originally, nebula was a name for any diffuse astronomical object, including galaxies beyond the Milky Way. The Andromeda Galaxy, for instance, was once referred to as the Andromeda Nebula (and spiral galaxies in general as "spiral nebulae") before the true nature of galaxies was confirmed in the early 20th century by Vesto Slipher, Edwin Hubble and others.</p>
+
+                    <p>Most nebulae are of vast size, even millions of light years in diameter. Contrary to fictional depictions where starships hide in nebulae as thick as cloud banks, in reality a nebula that is barely visible to the human eye from Earth would appear larger, but no brighter, from close by"</p>
+                    <br>
+                    <h3>Source</h3>
+                    <br>
+                    <a href="https://en.wikipedia.org/wiki/Nebula" target="_blank">Wikipedia</a>
+				</div>
+				<div id="quasar">
+					<img class="quasarImg" src="assets/images/quasar.jpg">
+					<p>"Quasars (/ˈkweɪzɑːr/) or quasi-stellar radio sources are the most energetic and distant members of a class of objects called active galactic nuclei (AGN). Quasars are extremely luminous and were first identified as being high redshift sources of electromagnetic energy, including radio waves and visible light, that appeared to be similar to stars, rather than extended sources similar to galaxies. Their spectra contain very broad emission lines, unlike any known from stars, hence the name "quasi-stellar." Their luminosity can be 100 times greater than that of the Milky Way. Most quasars were formed approximately 12 billion years ago, and they are normally caused by collisions of galaxies, with the galaxies' central black holes merging to form either a supermassive black hole or a binary black hole system."</p>
+                    <br>
+                    <h3>Source</h3>
+                    <br>
+                    <a href="https://en.wikipedia.org/wiki/Quasar" target="_blank">Wikipedia</a>
+				</div>
+				<div id="spot">
+					<img class="spotImg" src="assets/images/supernova.jpg">
+					<p>"A supernova is the explosion of a star. It is the largest explosion that takes place in space.</p>
+
+                    <p>A supernova happens where there is a change in the core, or center, of a star. A change can occur in two different ways, with both resulting in a supernova.</p>
+
+                    <p>The first type of supernova happens in binary star systems. Binary stars are two stars that orbit the same point. One of the stars, a carbon-oxygen white dwarf, steals matter from its companion star. Eventually, the white dwarf accumulates too much matter. Having too much matter causes the star to explode, resulting in a supernova.</p>
+
+                    <p>The second type of supernova occurs at the end of a single star’s lifetime. As the star runs out of nuclear fuel, some of its mass flows into its core. Eventually, the core is so heavy that it cannot withstand its own gravitational force. The core collapses, which results in the giant explosion of a supernova. The sun is a single star, but it does not have enough mass to become a supernova."</p>
+                    <br>
+                    <h3>Source</h3>
+                    <br>
+                    <a href="http://www.nasa.gov/audience/forstudents/5-8/features/nasa-knows/what-is-a-supernova.html" target="_blank">NASA</a>
+				</div>
+				<!-- <h2 id="length"></h2> -->
+				<br>
+				<div class="livesContainer">
+				<span>Guesses: </span><span id = "numLives"></span>
+				<!-- <h2 id = "numLives"></h2> -->
+				</div>
+				<div class = "guessedContainer">
+				<h2 class="LettersGuessed1">Letters Guessed</h2>
+				<h2 id="LettersGuessed" ></h2>
+				</div>
+				<div id="PlayAgainContainer">
+					<h2 id="Play"></h2>
+					<h2 id="question">"Y" or "N"</h2>
+				</div>
+				<!-- <h1 id="lose"></h1> -->
+			<!-- </div>	 -->
+			<!-- <div id="game">  -->
+				<div id = "gameover"></div>
+				<!-- <iframe id="video" width="250" height="40" src="https://www.youtube.com/embed/yfdLRTt34_o?autoplay=1" frameborder="0" allowfullscreen></iframe> -->
+				<iframe id="video" width="10" height="10" src="https://www.youtube.com/embed/DjTERXcdU38?autoplay=1" frameborder="0"></iframe>
+				<!-- <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/NINOxRxze9k?autoplay=1" frameborder="0"></iframe> -->
+			<!-- </div> -->
+		</div>
+
+
+	</body>
+</html>
